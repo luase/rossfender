@@ -1,0 +1,31 @@
+{% extends 'core/base.html' %}
+{% block title %}
+Contacto
+{% endblock %}
+{% block background %}{% load static %}{% static 'core/img/contacto.jpg' %}{% endblock background %}
+
+{% block headers %}
+    <h1>Contacto</h1>
+    
+{% endblock headers %}
+
+
+
+{% block content %}
+<div class="row">
+<div class="col-md-4">
+      {% load easy_maps_tags %}
+      {% easy_map "Mercado Irapuato, Guanajuato, Barrio de la Calzada de Guadalupe, Irapuato, Guanajuato" 400 300 %}
+</div>
+<div class="col-md-8">
+          <p><i class="fa fa-phone-square fa" aria-hidden="true"> 4900769 </i> </p> 
+          <p><i class="fa fa-location-arrow fa" aria-hidden="true">Ext. Mercado Irapuato locales E-24 y E25</i>  </p> 
+          <p><i class="fa fa-envelope fa" aria-hidden="true">aguete.rocio@gmail.com</i> </p> 
+          <p><i class="fa fa-whatsapp fa" aria-hidden="true"> 462-600-66-82</i></p>  
+          
+</div>
+</div>
+
+{% endblock   %}
+
+        
