@@ -64,7 +64,7 @@ class Order(models.Model):
     delivery_date = models.DateTimeField()
     client = models.ForeignKey('Client', on_delete=models.CASCADE)
     def __str__(self):
-        return f'{self.shape} - {self.flavor}'
+        return f'{self.delivery_date.date()} - {self.cake} - {self.client}'
 
 # class User(AbstractUser):
 class Client(models.Model):
@@ -74,3 +74,5 @@ class Client(models.Model):
     phone_regex = RegexValidator(regex=r'^\+?1?\d{9,15}$', message="Phone number must be entered in the format: '+999999999'. Up to 15 digits allowed.")
     phone_number = models.CharField(validators=[phone_regex], max_length=17, blank=True)
     birth_date = models.DateField(null=True, blank=True)
+    def __str__(self):
+        return f'{self.first_names} {self.last_names}'
