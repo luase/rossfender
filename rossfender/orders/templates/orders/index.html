@@ -1,2 +1,4 @@
 <p><a href="{% url 'orders:create_order' %}">Crear Pedido</a></p>
-<p><a href="{% url 'orders:consults' %}">Consultas</a></p>
+<p><a href="{% url 'orders:consult' %}">Consultas</a></p>
+<p>Entregas para hoy</p>
+{% include "orders/_orders.html" with order_list=orders_for_today %}
