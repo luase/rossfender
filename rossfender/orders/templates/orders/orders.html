@@ -1,0 +1,9 @@
+{% if order_list %}
+    {% for order in order_list %}
+    {% include "orders/order_small.html" with order=order%}
+    {% endfor %}
+{% else %}
+
+    <p>No hay ordenes.</p>
+
+{% endif %}
