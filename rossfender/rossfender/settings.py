@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'core',
-    'easy_maps'
+    'easy_maps',
+    'galeria.apps.GaleriaConfig'
 ]
 
 MIDDLEWARE = [
