@@ -9,36 +9,36 @@ Acerca de mí
 {% endblock headers %}
 {% block content %}
 <div class="container-fluid bg-1 text-center">
-  <h3>¿Quién soy?</h3>
+  <h1>¿Quién soy?</h1>
   {% load static %}
-  <img class="rounded-circle retrato" style="padding-top:20px;padding-bottom:20 px"  src="{% static 'core/img/avatar1.jpg' %}" alt="Bird">
-  <h3>Raquel</h3>
+  <img class="rounded-circle retrato" style="padding-top:20px;padding-bottom:40 px"  src="{% static 'core/img/avatar1.jpg' %}" alt="Bird">
+  <h3 style="padding-top: 20px">Rocío Aguete</h3>
 </div>
-<div class="container-fluid text-center" style=" padding-top:60px">
-    {% lorem 1 b random %}
-</div>
-<div class="container-fluid" style=" padding-top:200px">
-  <div class="row">
-    <div class="col-sm-8">
-      <h2>About Company Page</h2>
-      <h4>Lorem ipsum..</h4>
-      <p>Lorem ipsum..</p>
-    </div>
-    <div class="col-sm-4">
-      <span> <i class="fa fa-birthday-cake fa-4x" aria-hidden="true"></i></span>
-    </div>
+<div class="container-fluid text-center" style=" padding-top:30px">
+  <div class="col-10" style="padding-left: 300px">
+    <p class="text-center"><i>"Hola, soy Rocio. Al día de hoy tengo más de 10 años en el mundo de la pastelería, lo cual me ha permitido realizar trabajos para cumpleaños, bodas, eventos nacionales e internacionales. La experiencia me ha ayudado a entender las más grandes exigencias de mis clientes, garantizando así que cada pastel se vuelva un momento inolvidable."</i></p>
   </div>
+    
 </div>
 
-<div class="container-fluid bg-grey">
+
+<div class="container-fluid bg-grey text-center">
+    <br>
+    <br>
+    <h1>Nuestra misión, visión y valores:</h1>
+    <br>
   <div class="row">
-    <div class="col-sm-4">
-      <span class="glyphicon glyphicon-globe logo"></span>
+    <div class="col-sm-4" style="padding-top: 40px">
+      <span ><i class="fa fa-bullseye fa-5x"></i></span>
+      <h2>MISIÓN: </h2><strong>Ofrecer el mejor servicio de alta repostería en todo México, impulsando los sabores tradicionales como una forma de expresión artística.</strong>
     </div>
-    <div class="col-sm-8">
-      <h2>Our Values</h2>
-      <h4><strong>MISSION:</strong> Our mission lorem ipsum..</h4>
-      <p><strong>VISION:</strong> Our vision Lorem ipsum..</p>
+    <div class="col-sm-4" style="padding-top: 40px">
+      <span ><i class="fa fa-eye fa-5x"></i></span>
+        <h2>VISIÓN: </h2><strong>En 5 años ser una de las pasterias más reconocidas del país, destacando por la relación única de sabor y servicio.</strong>
+      </div>
+    <div class="col-sm-4" style="padding-top: 40px">
+      <span ><i class="fa fa-heart fa-5x"></i></span>
+        <h2>VALORES:</h2> <strong> Servicialidad, Honestidad, Energía, Excelencia</strong>
     </div>
   </div>
 </div>
