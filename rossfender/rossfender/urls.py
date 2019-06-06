@@ -15,13 +15,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
-from core import views
+from django.conf import settings
+from core import views as core_views
+from galeria import views as galeria_views
 
 urlpatterns = [
 path('orders/', include('orders.urls')),
 path('admin/', admin.site.urls),
-path('',views.home, name="home"),
-path('about/',views.about,name="about"),
-path('contact/',views.contacto,name="contact"),
-path('portafolio/',views.portafolio,name="portafolio"),
+path('',core_views.home, name="home"),
+path('about/',core_views.about,name="about"),
+path('contact/',core_views.contacto,name="contact"),
+path('galeria/',galeria_views.portafolio,name="portafolio"),
 ]
+if settings.DEBUG:
+    from django.conf.urls.static import static
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

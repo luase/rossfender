@@ -123,5 +123,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+##media folder configuration
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+
+
+#EASY MAPS CoNFiguraTioN
 EASY_MAPS_GOOGLE_KEY = 'AIzaSyCpV60p1YnZUsSHJPMMxwyPk1wOopR2Fj0'
 EASY_MAPS_LANGUAGE = 'es'
