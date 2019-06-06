@@ -31,7 +31,7 @@ class OrderAdmin(admin.ModelAdmin):
     fecha_entrega.short_description = 'Fecha de entrega:'
 
     def fecha_pedido(self, obj):
-        return ("%s" % (obj.delivery_date))
+        return ("%s" % (obj.creation_date))
     fecha_pedido.short_description = 'Fecha de pedido:'
 
     def estado(self, obj):
@@ -45,7 +45,7 @@ class OrderAdmin(admin.ModelAdmin):
 
     list_filter = ['client','delivery_date']
     inlines = [PaymentInLine]
-    search_fields = ['delivery_date']
+    search_fields = ['delivery_date','client','creation_date']
 
 
 
@@ -91,7 +91,24 @@ class IngredientAdmin(admin.ModelAdmin):
         return ("%s" % (obj.units))
     unidades.short_description = 'Unidades:'
 
+    search_fields = ['name']
 
+class MeasureAdmin(admin.ModelAdmin):
+    fieldsets = [
+        ('Ingrediente: ',               {'fields': ['ingredient']}),
+        ('Forma y medida: ',            {'fields': ['shape','quantity']}),
+    ]
+    list_display = ('ingrediente','medidas')
+
+    def ingrediente(self, obj):
+        return ("%s" % (obj.ingredient))
+    ingrediente.short_description = 'Ingrediente:'
+
+    def medidas(self, obj):
+        return ("FORMA: %s , CANTIDAD: %s" % (obj.shape, obj.quantity))
+    medidas.short_description = 'Medidas:'
+
+    search_fields = ['ingredient','shapes','quantity']
 
 class FlavorAdmin(admin.ModelAdmin):
     fieldsets = [
@@ -106,6 +123,8 @@ class FlavorAdmin(admin.ModelAdmin):
     def descripcion(self, obj):
         return ("%s" % (obj.description))
     descripcion.short_description = 'Descripción:'
+
+    search_fields = ['name']
 
 
 
@@ -144,12 +163,29 @@ class PaymentAdmin(admin.ModelAdmin):
     fecha_pago.short_description = 'Fecha de pago:'
 
 
+
+class RecommendedPriceAdmin(admin.ModelAdmin):
+    fieldsets = [
+        ('Caracteristicas: ',               {'fields': ['flavor','shape']}),
+        ('Precio recomendado: ',               {'fields': ['price']}),
+    ]
+    list_display = ('caracteristicas','precio')
+
+    def caracteristicas(self, obj):
+        return ("Pastel de %s %s" % (obj.flavor, obj.shape))
+    caracteristicas.short_description = 'Caracteristicas:'
+
+    def precio(self, obj):
+        return ("$%s" % (obj.price))
+    precio.short_description = 'Precio recomendado:'
+
+    
+
 admin.site.register(Order, OrderAdmin)
 admin.site.register(Ingredient, IngredientAdmin)
 admin.site.register(Flavor, FlavorAdmin)
 admin.site.register(Shape, ShapeAdmin)
 admin.site.register(Client, ClientAdmin)
 admin.site.register(Payment, PaymentAdmin)
-
-admin.site.register(Measure)
-admin.site.register(RecommendedPrice)
+admin.site.register(Measure, MeasureAdmin)
+admin.site.register(RecommendedPrice, RecommendedPriceAdmin)
