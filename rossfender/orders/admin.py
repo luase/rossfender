@@ -58,7 +58,7 @@ class ClientAdmin(admin.ModelAdmin):
         ('Nombre: ',                {'fields': ['first_names','last_names']}),
         ('Detalles del cliente: ',  {'fields': ['description']}),
         ('Fecha de Nacimiento: ',   {'fields': ['birth_date']}),
-        ('Teléfono: ',              {'fields': ['phone_number'], 'classes': ['collapse'], 'classes' : ('wide','extrapretty')}),
+        ('Teléfono: ',              {'fields': ['phone_number'], 'classes': ['collapse']}),
     ]
     #list_display = ('first_names','last_names','phone_number')
     list_display = ('nombre_mayusculas', 'telefono')
