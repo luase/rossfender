@@ -1,0 +1,8 @@
+<p><a href="{% url 'orders:index' %}">inicio</a></p>
+<h1>Pedido Nuevo</h1>
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+<form action="{% url 'orders:create' %}" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit">
+</form>

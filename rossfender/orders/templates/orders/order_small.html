@@ -1,12 +1,11 @@
-<a href="">
-    <div>
-        <div>
-            <strong>pastel: </strong>{{ order.shape }} de {{ order.flavor }}
-            <strong>total: </strong>{{ order.price }}
-        </div>
-        <div>
-            <strong>cliente: </strong>{{ order.client }}
-            <strong>adeudo: </strong> 
-        </div>
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title"><strong>{{ order.shape }} de {{ order.flavor }}</strong> {{ order.id }}</h5>
+        <p class="card-text">{{ order.client }}</p>
+        <a href="#" class="btn btn-primary">Button</a>
     </div>
-</a>
+    <div class="card-footer">
+    costo {{ order.price }}
+    <a href="#" class="btn btn-primary">Button</a>
+    </div>
+</div>
