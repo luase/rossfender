@@ -31,7 +31,7 @@ class OrderAdmin(admin.ModelAdmin):
     fecha_entrega.short_description = 'Fecha de entrega:'
 
     def fecha_pedido(self, obj):
-        return ("%s" % (obj.creation_date))
+        return ("%s" % (obj.creation_date.date()))
     fecha_pedido.short_description = 'Fecha de pedido:'
 
     def estado(self, obj):
