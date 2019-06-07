@@ -1,0 +1,26 @@
+{% extends 'core/base.html' %}
+{% block title %}
+Galeria
+{% endblock %}
+{% block background %}{% load static %}{% static 'core/img/galeria.jpeg' %}{% endblock background %}
+{% block headers %}
+    <h1>Galeria</h1>
+    <span class="subheading">Aquí encontraras algunas de nuestras creaciones</span>
+    
+{% endblock headers %}
+
+{% block content %}
+
+<div class="card-group">
+    {% for cake in cakes  %}
+     <div class="card" style="width:200px;height:200px">
+        <img class="img-thumbnail" style="width:200px;height:200px" src="{{cake.image.url}}">
+        <div class="card-body">
+            <h4 class="card-title">{{cake.tittle}}</h4>
+            <p class="card-text">{{cake.description}}</p>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock content %}
+ 

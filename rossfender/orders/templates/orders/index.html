@@ -1,0 +1,19 @@
+{% extends "orders/main.html" %}
+{% block title %}
+Rossfender
+{% endblock title %}
+
+{% block content %}
+<div class="text-right">
+    <a href="{% url 'orders:order_form' %}" class="btn btn-primary btn-sm text-right">Crear Pedido</a>
+</div>
+
+<h3>Pedidos para mañana</h3>
+{% include "orders/orders.html" with order_list=tomorrows_orders %}
+<h4>Entregas para hoy</h4>
+{% include "orders/orders.html" with order_list=todays_orders %}
+<div class="text-center"><a href="{% url 'orders:order_list' %}" class="btn btn-primary btn-sm">ver todos los pedidos</a></div>
+
+
+
+{% endblock content %}

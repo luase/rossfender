@@ -1,0 +1,18 @@
+
+{% extends "orders/main.html" %}
+{% block title %}
+Anticipo
+{% endblock title %}
+
+{% block content %}
+
+<h1>Anticipo para el pedido no. {{ order.id }}</h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+<form action="{% url 'orders:add_payment' order.id %}" method="post">
+    {% csrf_token %}
+    <label for="id_ammount">Ammount:</label></th><td><input type="number" name="ammount" step="0.01" required id="id_ammount">
+    <input type="submit" value="Guardar">
+</form>
+
+{% endblock content %}

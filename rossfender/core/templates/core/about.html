@@ -1,0 +1,46 @@
+{% extends 'core/base.html' %}
+{% block title %}
+Acerca de mí
+{% endblock %}
+{% block background %}{% load static %}{% static 'core/img/about.jpg' %}{% endblock background %}
+{% block headers %}
+    <h1>Acerca de mí</h1>
+    
+{% endblock headers %}
+{% block content %}
+<div class="container-fluid bg-1 text-center">
+  <h1>¿Quién soy?</h1>
+  {% load static %}
+  <img class="rounded-circle retrato" style="padding-top:20px;padding-bottom:40 px"  src="{% static 'core/img/avatar1.jpg' %}" alt="Bird">
+  <h3 style="padding-top: 20px">Rocío Aguete</h3>
+</div>
+<div class="container-fluid text-center" style=" padding-top:30px">
+  <div class="col-10" style="padding-left: 300px">
+    <p class="text-center"><i>"Hola, soy Rocio. Al día de hoy tengo más de 10 años en el mundo de la pastelería, lo cual me ha permitido realizar trabajos para cumpleaños, bodas, eventos nacionales e internacionales. La experiencia me ha ayudado a entender las más grandes exigencias de mis clientes, garantizando así que cada pastel se vuelva un momento inolvidable."</i></p>
+  </div>
+    
+</div>
+
+
+<div class="container-fluid bg-grey text-center">
+    <br>
+    <br>
+    <h1>Nuestra misión, visión y valores:</h1>
+    <br>
+  <div class="row">
+    <div class="col-sm-4" style="padding-top: 40px">
+      <span ><i class="fa fa-bullseye fa-5x"></i></span>
+      <h2>MISIÓN: </h2><strong>Ofrecer el mejor servicio de alta repostería en todo México, impulsando los sabores tradicionales como una forma de expresión artística.</strong>
+    </div>
+    <div class="col-sm-4" style="padding-top: 40px">
+      <span ><i class="fa fa-eye fa-5x"></i></span>
+        <h2>VISIÓN: </h2><strong>En 5 años ser una de las pasterias más reconocidas del país, destacando por la relación única de sabor y servicio.</strong>
+      </div>
+    <div class="col-sm-4" style="padding-top: 40px">
+      <span ><i class="fa fa-heart fa-5x"></i></span>
+        <h2>VALORES:</h2> <strong> Servicialidad, Honestidad, Energía, Excelencia</strong>
+    </div>
+  </div>
+</div>
+
+{% endblock  %}

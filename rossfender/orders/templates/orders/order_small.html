@@ -1,0 +1,24 @@
+<div class="card  bg-light" style="width: 25rem;">
+    <div class="card-header">{{ order.shape }} de {{ order.flavor }}</div>
+    <div class="card-body">
+        <div class="card-title">Para: {{ order.client }}</div>
+        <div class="card-subtitle text-muted">Orden no. {{ order.id }}</div>
+        {% if order.description %}
+            <p class="card-text font-weight-light">{{ order.description }}</p>
+        {% else %}
+            <p class="card-text font-weight-light">Ninguna</p>
+        {% endif %}
+        
+        
+        
+    </div>
+    <div class="card-footer bg-transparent">
+            total: {{ order.price }}
+            <p class="text-center"> <a href="{% url 'orders:order_detail' order.id %}" class="btn btn-success btn-sm text-center">detalles</a></p>
+           
+    </div>
+    {% comment %} <div class="card-footer">
+    costo {{ order.price }}
+    <a href="#" class="btn btn-primary">Button</a>
+    </div> {% endcomment %}
+</div>

@@ -1,0 +1,17 @@
+
+{% extends "orders/main.html" %}
+{% block title %}
+Orden
+{% endblock title %}
+
+{% block content %}
+<a href="{% url 'orders:client_form' %}" class="btn btn-primary btn-sm">añadir cliente</a>
+<h1>Pedido Nuevo</h1>
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+<form action="{% url 'orders:order_form' %}" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Guardar">
+</form>
+
+{% endblock content %}

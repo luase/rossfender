@@ -1,0 +1,11 @@
+{% if order_list %}
+    <div class="card-decks">
+        {% for order in order_list %}
+        {% include "orders/order_small.html" with order=order%}
+        {% endfor %}
+    </div>
+{% else %}
+
+    <p class="text-center">No hay ordenes para hoy</p>
+
+{% endif %}

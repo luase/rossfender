@@ -1,0 +1,59 @@
+{% extends 'core/base.html' %}
+{% block title %}
+Contacto
+{% endblock %}
+{% block background %}{% load static %}{% static 'core/img/contacto.jpg' %}{% endblock background %}
+
+{% block headers %}
+    <h1>Contacto</h1>
+    
+{% endblock headers %}
+
+
+
+{% block content %}
+<div class="container" >
+<div class="text-center">
+<div class="row text-center">
+    <div class="col-lg-8 text-center">
+        {% load easy_maps_tags %}
+      {% easy_map "Materias Primas La Fiesta y Pasteles Rossfender, Col del Bosque, Barrio de la Calzada de Guadalupe, Irapuato, Gto., México" 1100 400 %}
+    </div>
+</div>
+      
+</div>
+</div>
+
+ <div class="container">
+  <h3 class="text-center">¿Tines algún pedido?</h3>
+  <p class="text-center"><em>Con gusto te ayudamos :D</em></p>
+  <div class="row test">
+    <div class="col-md-4">
+      <p class="text-center">Pedidos y contacto</p>
+      <p><span><i class="fa fa-map-marker" aria-hidden="true"></i></span>Ext. Mercado Irapuato locales E-24 y E-25</p>
+      <p><span ><i class="fa fa-phone" aria-hidden="true"></i></span>Telefono: 4900769 </p>
+      <p><span><i class="fa fa-whatsapp" aria-hidden="true"></i></span>Whatsapp:4626006682  </p>
+      <p><span><i class="fa fa-envelope" aria-hidden="true"></i></span>Email: aguete.rocio@gmail.com</p>
+    </div>
+    <div class="col-md-8">
+      <div class="row">
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+        </div>
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+        </div>
+      </div>
+      <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea>
+      <div class="row">
+        <div class="col-md-12 form-group">
+          <button class="btn pull-right" type="submit">Send</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 
+
+{% endblock   %}
+
+        

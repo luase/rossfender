@@ -1,0 +1,16 @@
+
+{% extends "orders/main.html" %}
+{% block title %}
+Cliente
+{% endblock title %}
+
+{% block content %}
+<h1>Cliente Nuevo</h1>
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+<form action="{% url 'orders:client_form' %}" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Guardar">
+</form>
+
+{% endblock content %}

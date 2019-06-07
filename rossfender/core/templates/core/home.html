@@ -1,0 +1,41 @@
+{% extends 'core/base.html' %}
+{% block title %}
+Home
+{% endblock %}
+{% block background %}{% load static %}{% static 'core/img/home.jpg' %}{% endblock background %}
+
+{% block headers %}
+    <h1>ROSSFENDER</h1>
+    <span class="subheading">Hechos con amor</span>
+{% endblock headers %}
+
+ 
+
+{% block content %}
+<div class="container-fluid text-center">
+  <h1>Nuestros Servicios</h1>
+  <br>
+  <div class="row">
+    <div class="col-sm-4">
+      <span ><i class="fa fa-smile-o fa-4x" aria-hidden="true"></i></span>
+      <h2>Servicios Personalizados</h2>
+      <p><strong>Atendemos los deseos y gustos de cada cliente, garantizando que sea un servicio único.</strong></p>
+    </div>
+    <div class="col-sm-4">
+      <span><i class="fa fa-birthday-cake fa-4x" aria-hidden="true"></i></span>
+      <h2>Alta Pastelería</h2>
+      <p><strong>Nuestros procesos e ingredientes son de los más altos estándares, garantizando nuestro sabor y calidad tan distintivos.</strong></p>
+    </div>
+    <div class="col-sm-4">
+      <span > <i class="fa fa-gift fa-4x" aria-hidden="true"></i></span>
+      <h2>Evento Especial</h2>
+      <p><strong>Comparte con nosotros tus momentos especiales, y atrévete a vivir un día inolvidable.</strong></p>
+    </div>    
+  </div>
+  <br>
+  <br>
+  <br><h4 style="padding-top: 20">Síguenos en nuestras redes sociales.</h4>
+</div>
+
+
+{% endblock   %}
