@@ -25,14 +25,14 @@ Contacto
 </div>
 
  <div class="container">
-  <h3 class="text-center">¿Tines algún pedido?</h3>
+  <h3 class="text-center" style="padding-top: 20px">¿Tienes algún pedido?</h3>
   <p class="text-center"><em>Con gusto te ayudamos :D</em></p>
   <div class="row test">
     <div class="col-md-4">
       <p class="text-center">Pedidos y contacto</p>
       <p><span><i class="fa fa-map-marker" aria-hidden="true"></i></span>Ext. Mercado Irapuato locales E-24 y E-25</p>
       <p><span ><i class="fa fa-phone" aria-hidden="true"></i></span>Telefono: 4900769 </p>
-      <p><span><i class="fa fa-whatsapp" aria-hidden="true"></i></span>Whatsapp:4626006682  </p>
+      <p><span><i class="fa fa-whatsapp" aria-hidden="true"></i></span>Whatsapp: (462) 6006682  </p>
       <p><span><i class="fa fa-envelope" aria-hidden="true"></i></span>Email: aguete.rocio@gmail.com</p>
     </div>
     <div class="col-md-8">
@@ -44,15 +44,35 @@ Contacto
           <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
         </div>
       </div>
-      <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea>
+      <textarea id="myText" class="form-control" id="comments" name="comments" placeholder="Comment" rows="5">Me interesan sus pasteles.</textarea>
       <div class="row">
         <div class="col-md-12 form-group">
-          <button class="btn pull-right" type="submit">Send</button>
+          <button class="btn pull-right" type="submit" onclick="myFunction()" onclick="sendMail(); return false">Send</button>
         </div>
       </div>
     </div>
   </div>
 </div> 
+
+<script>
+  function myFunction() {
+    confirm("Su mensaje ha sido enviado correctamente.");
+  }
+</script>
+<script>
+  function sendMail() {
+    var link = "mailto:hugo-metallica@hotmail.com"
+             + "?cc=hugo-metallica@hotmail.com"
+             + "&subject=" + escape("Cliente interesado.")
+             + "&body=" + escape(document.getElementById('myText').value)
+    ;
+
+    window.location.href = link;
+}
+</script>
+
+
+
 
 {% endblock   %}
 
