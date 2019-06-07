@@ -1,0 +1,49 @@
+{% extends "orders/main.html" %}
+{% block title %}
+Detalles
+{% endblock title %}
+
+{% block content %}
+<a href="#" class="btn btn-primary btn-sm">imprimir</a>
+<h2>Detalles del pedido:</h2>
+<p>{{ order.shape }} de {{ order.flavor }}</p> <p>fecha de entrega: {{order.delivery_date}}</p>
+<p>orden no. {{ order.id }}</p>
+<p>descripción del pedido:</p>
+<ul>
+{% if order.description %}
+    <p>{{order.description}}</p>
+{% else %}
+    <p>sin descripción</p>
+{% endif %}
+</ul>
+<h2>Detalles de pago:</h2>
+<p>precio del pastel: ${{order.price}}</p>
+<p>anticipo:</p>
+{% if order.payment_set.all %}
+    <li>
+    {% for payment in order.payment_set.all %}
+        <ul>
+            <p>${{payment.ammount}} - {{payment.creation_date}}</p>
+        </ul>
+    {% endfor %}
+    </li>
+{% else %}
+<li>
+<ul>
+<p>no hay anticipo</p>
+</ul>
+</li>
+{% endif %}
+<a href="#" class="btn btn-primary btn-sm">añadir anticipo</a>
+{% comment %} <a href="{% url 'orders:add_payment' order.id %}" class="btn btn-primary btn-sm">añadir anticipo</a> {% endcomment %}
+<h2>Detalles del cliente:</h2>
+<p>{{order.client}}</p>
+<p>número telefónico</p>
+<li>
+<ul>
+    <p>{{ order.client.phone_number }}</p>
+</ul>
+</li>
+
+
+{% endblock content %}

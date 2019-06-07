@@ -1,0 +1,12 @@
+{% extends "orders/main.html" %}
+
+{% block title %}
+Ordenes
+{% endblock title %}
+
+{% block content %}
+
+<h1 class="text-center">Lista de ordenes</h1>
+{% include "orders/orders.html" with order_list=order_list %}
+
+{% endblock content %}
