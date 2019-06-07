@@ -1,7 +1,9 @@
 {% if order_list %}
-    {% for order in order_list %}
-    {% include "orders/order_small.html" with order=order%}
-    {% endfor %}
+    <div class="card-columns">
+        {% for order in order_list %}
+        {% include "orders/order_small.html" with order=order%}
+        {% endfor %}
+    </div>
 {% else %}
 
     <p>No hay ordenes.</p>

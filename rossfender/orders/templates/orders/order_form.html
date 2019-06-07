@@ -1,8 +1,17 @@
-<p><a href="{% url 'orders:index' %}">inicio</a></p>
+
+{% extends "orders/main.html" %}
+{% block title %}
+Orden
+{% endblock title %}
+
+{% block content %}
+
 <h1>Pedido Nuevo</h1>
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
-<form action="{% url 'orders:create' %}" method="post">
+<form action="{% url 'orders:order_form' %}" method="post">
     {% csrf_token %}
     {{ form }}
     <input type="submit" value="Submit">
 </form>
+
+{% endblock content %}

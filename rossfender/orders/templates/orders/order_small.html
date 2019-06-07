@@ -1,11 +1,24 @@
 <div class="card">
+    <div class="card-header">{{ order.shape }} de {{ order.flavor }}</div>
     <div class="card-body">
-        <h5 class="card-title"><strong>{{ order.shape }} de {{ order.flavor }}</strong> {{ order.id }}</h5>
-        <p class="card-text">{{ order.client }}</p>
-        <a href="#" class="btn btn-primary">Button</a>
+        <div class="card-title">para {{ order.client }}</div>
+        <div class="card-subtitle text-muted">orden no. {{ order.id }}</div>
+        descripción:
+        {% if order.description %}
+            <p class="card-text font-weight-light">{{ order.description }}</p>
+        {% else %}
+            <p class="card-text font-weight-light">ninguna</p>
+        {% endif %}
+        
+        
+        
     </div>
-    <div class="card-footer">
+    <div class="card-footer bg-transparent">
+            total: {{ order.price }}
+            <a href="{% url 'orders:order_detail' order.id %}" class="btn btn-primary btn-sm">detalles</a>
+    </div>
+    {% comment %} <div class="card-footer">
     costo {{ order.price }}
     <a href="#" class="btn btn-primary">Button</a>
-    </div>
+    </div> {% endcomment %}
 </div>

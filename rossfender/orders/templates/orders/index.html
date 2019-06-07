@@ -1,7 +1,15 @@
-<p><a href="{% url 'orders:form' %}">Crear Pedido</a></p>
-<h2>Pedidos para mañana</h2>
+{% extends "orders/main.html" %}
+{% block title %}
+Rossfender
+{% endblock title %}
+
+{% block content %}
+<a href="{% url 'orders:order_form' %}" class="btn btn-primary btn-sm">Crear Pedido</a>
+<h3>Pedidos para mañana</h3>
 {% include "orders/orders.html" with order_list=tomorrows_orders %}
-<h1>Entregas para hoy</h1>
+<h4>Entregas para hoy</h4>
 {% include "orders/orders.html" with order_list=todays_orders %}
-<h3>Pedidos para la semana</h3>
-{% include "orders/orders.html" with order_list=relevant_orders %}
+<a href="{% url 'orders:order_list' %}" class="btn btn-primary btn-sm">ver todos los pedidos</a>
+
+
+{% endblock content %}

@@ -1,19 +1,12 @@
-{% if order_list %}
+{% extends "orders/main.html" %}
 
-    <!-- <table>
-        {% for funcion in order_list %}
-        <tr>
-            <td><a href="{% url 'cartelera:pelicula' funcion.pelicula.id %}">{{ funcion.pelicula }}</a></td>
-            <td><a href="{% url 'cartelera:funcion' funcion.id %}">{{ funcion.horario }}</a></td>
-        </tr>
-        {% endfor %}
-    </table> -->
-    {% for order in order_list %}
-        <p>{{ order }}</p><br>
-    {% endfor %}
+{% block title %}
+Ordenes
+{% endblock title %}
 
-{% else %}
+{% block content %}
 
-    <p>No hay ordenes.</p>
+<h1>Lista de ordenes</h1>
+{% include "orders/orders.html" with order_list=order_list %}
 
-{% endif %}
+{% endblock content %}
