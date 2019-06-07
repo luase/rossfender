@@ -6,9 +6,7 @@ Detalles
 {% block content %}
 <a href="#" class="btn btn-primary btn-sm">imprimir</a>
 <h2>Detalles del pedido:</h2>
-<nobr>
 <p>{{ order.shape }} de {{ order.flavor }}</p> <p>fecha de entrega: {{order.delivery_date}}</p>
-</nobr>
 <p>orden no. {{ order.id }}</p>
 <p>descripción del pedido:</p>
 <ul>
@@ -37,6 +35,7 @@ Detalles
 </li>
 {% endif %}
 <a href="#" class="btn btn-primary btn-sm">añadir anticipo</a>
+{% comment %} <a href="{% url 'orders:add_payment' order.id %}" class="btn btn-primary btn-sm">añadir anticipo</a> {% endcomment %}
 <h2>Detalles del cliente:</h2>
 <p>{{order.client}}</p>
 <p>número telefónico</p>
